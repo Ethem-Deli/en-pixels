@@ -60,6 +60,26 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
+            <!-- In your index.html, update the product template part (around line 62) -->
+            <script type="text/template" id="product-template">
+                <div class="product-card ${product.featured ? 'featured' : ''} ${product.badgeClass ? product.badgeClass : ''}">
+                    ${product.badge ? `<span class="badge ${product.badgeClass}" data-badge="${product.badge}">${product.badge}</span>` : ''}
+                    <img src="${product.images[0]}" alt="${product.title}" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3>${product.title}</h3>
+                        <div class="price">
+                            ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                            <span class="current-price">$${product.price.toFixed(2)}</span>
+                        </div>
+                        <div class="rating">
+                            ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                            <span class="review-count">(${product.reviewCount})</span>
+                        </div>
+                        <p class="description">${product.description}</p>
+                        <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    </div>
+                </div>
+            </script>
 
             <!-- Search Bar -->
             <div class="search-container">
@@ -118,7 +138,7 @@
             <h2>Featured Artworks</h2>
             <p>Our most popular digital creations this month</p>
         </div>
-
+    
         <div class="products-grid" id="products-container">
             <!-- Products will be loaded here by JavaScript -->
         </div>

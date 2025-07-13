@@ -1,4 +1,4 @@
-// Sample product data - in a real app you might fetch this from an API
+// Sample product data
 const products = [
     {
         id: 1,
@@ -15,6 +15,7 @@ const products = [
         rating: 4.5,
         reviewCount: 24,
         badge: "Bestseller",
+        badgeClass: "badge-bestseller",
         featured: true,
         inStock: true
     },
@@ -35,6 +36,7 @@ const products = [
         rating: 4,
         reviewCount: 18,
         badge: "New",
+        badgeClass: "badge-new",
         featured: true,
         inStock: true
     },
@@ -75,6 +77,7 @@ const products = [
         rating: 4.5,
         reviewCount: 21,
         badge: "Sale",
+        badgeClass: "badge-sale",
         featured: true,
         inStock: true
     }
@@ -95,4 +98,3 @@ async function fetchProducts() {
 */
 
 export default products;
-
