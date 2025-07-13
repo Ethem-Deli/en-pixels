@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - En Pixels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header (same as index.html) -->
+<!-- Navigation Bar -->
+<header class="main-header">
+    <div class="header-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="En Pixels Logo" class="logo-img">
+                <span class="logo-text">EN PIXELS</span>
+            </a>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="shop.html?category=abstract" class="dropdown-item">Abstract Art</a>
+                        <a href="shop.html?category=landscape" class="dropdown-item">Landscapes</a>
+                        <a href="shop.html?category=portrait" class="dropdown-item">Portraits</a>
+                        <a href="shop.html?category=minimalist" class="dropdown-item">Minimalist</a>
+                        <a href="shop.html" class="dropdown-item all-items">View All</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header Icons -->
+        <div class="header-actions">
+            <button class="search-btn" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="account.html" class="account-btn" aria-label="My Account">
+                <i class="fas fa-user"></i>
+            </a>
+            <div class="cart-btn-container">
+                <button class="cart-btn" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Mobile Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search digital art..." class="search-input">
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button type="button" class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo-white.png" alt="En Pixels Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="mobile-dropdown">
+                    <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="shop.html?category=abstract">Abstract Art</a></li>
+                        <li><a href="shop.html?category=landscape">Landscapes</a></li>
+                        <li><a href="shop.html?category=portrait">Portraits</a></li>
+                        <li><a href="shop.html?category=minimalist">Minimalist</a></li>
+                        <li><a href="shop.html">View All</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <a href="account.html" class="mobile-account-btn">
+                <i class="fas fa-user"></i> My Account
+            </a>
+        </div>
+    </div>
+</header>
+    <main class="about-page">
+        <section class="about-hero">
+            <h1>Our Story</h1>
+            <p>Bringing digital art to life since 2018</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>En Pixels was founded with a simple mission: to make high-quality digital art accessible to
+                        everyone. We believe that art shouldn't be confined to galleries and museums, but should be part
+                        of our everyday lives.</p>
+                    <p>Our platform connects talented digital artists with art lovers around the world. Each piece in
+                        our collection is carefully curated to ensure exceptional quality and originality.</p>
+
+                    <h2>Our Artists</h2>
+                    <p>We work with over 200 independent artists from more than 30 countries. Our artists range from
+                        emerging talents to established names in the digital art world.</p>
+                    <p>When you purchase from En Pixels, you're directly supporting these artists and their creative
+                        journeys.</p>
+
+                    <h2>Quality Assurance</h2>
+                    <p>Every artwork in our collection is printed using archival-quality materials and state-of-the-art
+                        printing technology to ensure vibrant colors that last.</p>
+                    <p>We offer a 100% satisfaction guarantee - if you're not happy with your purchase, we'll make it
+                        right.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about-image.jpg" alt="Our studio">
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2>Meet The Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team/team1.jpg" alt="Alex Johnson">
+                    </div>
+                    <h3>Alex Johnson</h3>
+                    <p class="position">Founder & CEO</p>
+                    <p class="bio">Digital artist turned entrepreneur, Alex started En Pixels to bridge the gap between
+                        digital creators and art enthusiasts.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team/team2.jpg" alt="Maria Garcia">
+                    </div>
+                    <h3>Maria Garcia</h3>
+                    <p class="position">Creative Director</p>
+                    <p class="bio">With a background in graphic design and fine arts, Maria ensures every piece meets
+                        our high aesthetic standards.</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/team/team3.jpg" alt="James Chen">
+                    </div>
+                    <h3>James Chen</h3>
+                    <p class="position">Technology Lead</p>
+                    <p class="bio">James oversees our platform development and ensures a seamless experience for both
+                        artists and customers.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Artistic Integrity</h3>
+                    <p>We respect and protect the creative vision of our artists, presenting their work exactly as
+                        intended.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Sustainability</h3>
+                    <p>We use eco-friendly materials and processes to minimize our environmental impact.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Community</h3>
+                    <p>We foster connections between artists and art lovers, building a supportive creative community.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Footer Columns -->
+        <div class="footer-grid">
+            <!-- About Column -->
+            <div class="footer-column about-column">
+                <div class="footer-logo">
+                    <img src="images/logo-white.png" alt="En Pixels Logo">
+                </div>
+                <p class="footer-about">En Pixels is a premier destination for high-quality digital art, connecting art
+                    lovers with talented creators worldwide.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Customer Service Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="shipping.html">Shipping Policy</a></li>
+                    <li><a href="returns.html">Returns & Refunds</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3 class="footer-title">Contact Us</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Art Street, Creative City, CA 90210</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>(123) 456-7890</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@enpixels.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9am-6pm PST</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-column newsletter-column">
+                <h3 class="footer-title">Newsletter</h3>
+                <p class="newsletter-text">Subscribe to get updates on new collections and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="payment-methods">
+                    <img src="images/payments/visa.png" alt="Visa">
+                    <img src="images/payments/mastercard.png" alt="Mastercard">
+                    <img src="images/payments/amex.png" alt="American Express">
+                    <img src="images/payments/paypal.png" alt="PayPal">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; <span id="current-year"></span> En Pixels. All rights reserved.
+            </div>
+            <div class="footer-extra-links">
+                <a href="sitemap.html">Sitemap</a>
+                <a href="affiliates.html">Affiliates</a>
+                <a href="careers.html">Careers</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

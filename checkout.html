@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - En Pixels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header (same as index.html) -->
+<!-- Navigation Bar -->
+<header class="main-header">
+    <div class="header-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="En Pixels Logo" class="logo-img">
+                <span class="logo-text">EN PIXELS</span>
+            </a>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="shop.html?category=abstract" class="dropdown-item">Abstract Art</a>
+                        <a href="shop.html?category=landscape" class="dropdown-item">Landscapes</a>
+                        <a href="shop.html?category=portrait" class="dropdown-item">Portraits</a>
+                        <a href="shop.html?category=minimalist" class="dropdown-item">Minimalist</a>
+                        <a href="shop.html" class="dropdown-item all-items">View All</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header Icons -->
+        <div class="header-actions">
+            <button class="search-btn" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+            <a href="account.html" class="account-btn" aria-label="My Account">
+                <i class="fas fa-user"></i>
+            </a>
+            <div class="cart-btn-container">
+                <button class="cart-btn" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Mobile Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" placeholder="Search digital art..." class="search-input">
+                <button type="submit" class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button type="button" class="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo-white.png" alt="En Pixels Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="mobile-dropdown">
+                    <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="shop.html?category=abstract">Abstract Art</a></li>
+                        <li><a href="shop.html?category=landscape">Landscapes</a></li>
+                        <li><a href="shop.html?category=portrait">Portraits</a></li>
+                        <li><a href="shop.html?category=minimalist">Minimalist</a></li>
+                        <li><a href="shop.html">View All</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <a href="account.html" class="mobile-account-btn">
+                <i class="fas fa-user"></i> My Account
+            </a>
+        </div>
+    </div>
+</header>
+    <main class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h1>Checkout</h1>
+
+                <div class="checkout-progress">
+                    <div class="step active" data-step="1">
+                        <span>1</span>
+                        <p>Shipping</p>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span>2</span>
+                        <p>Payment</p>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span>3</span>
+                        <p>Confirmation</p>
+                    </div>
+                </div>
+
+                <form id="shippingForm" class="active-form">
+                    <h2>Shipping Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">Apartment, suite, etc. (optional)</label>
+                        <input type="text" id="address2" name="address2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="">Select country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="UK">United Kingdom</option>
+                                <!-- More countries would be added here -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State/Province</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP/Postal Code</label>
+                            <input type="text" id="zip" name="zip" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="saveInfo" name="saveInfo">
+                        <label for="saveInfo">Save this information for next time</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="back-btn">Back to Cart</button>
+                        <button type="button" class="next-btn" data-next="payment">Continue to Payment</button>
+                    </div>
+                </form>
+
+                <form id="paymentForm">
+                    <h2>Payment Method</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" checked>
+                            <label for="creditCard">
+                                <i class="far fa-credit-card"></i>
+                                Credit Card
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                            <label for="paypal">
+                                <i class="fab fa-paypal"></i>
+                                PayPal
+                            </label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="applePay" name="paymentMethod" value="applePay">
+                            <label for="applePay">
+                                <i class="fab fa-apple"></i>
+                                Apple Pay
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="credit-card-form">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName" name="cardName">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expDate">Expiration Date</label>
+                                <input type="text" id="expDate" name="expDate" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="back-btn" data-back="shipping">Back to Shipping</button>
+                        <button type="button" class="next-btn" data-next="review">Review Order</button>
+                    </div>
+                </form>
+
+                <div id="reviewOrder">
+                    <h2>Review Your Order</h2>
+                    <div class="order-summary">
+                        <div class="order-items">
+                            <h3>Your Items</h3>
+                            <!-- Order items will be loaded by JavaScript -->
+                        </div>
+                        <div class="order-totals">
+                            <h3>Order Summary</h3>
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal">$0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Shipping</span>
+                                <span class="shipping">$0.00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Tax</span>
+                                <span class="tax">$0.00</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>Total</span>
+                                <span class="total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shipping-info">
+                        <h3>Shipping Information</h3>
+                        <div class="info-display">
+                            <!-- Shipping info will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="payment-info">
+                        <h3>Payment Method</h3>
+                        <div class="info-display">
+                            <!-- Payment info will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="back-btn" data-back="payment">Back to Payment</button>
+                        <button type="button" id="placeOrderBtn">Place Order</button>
+                    </div>
+                </div>
+
+                <div id="orderConfirmation">
+                    <div class="confirmation-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h2>Order Confirmed!</h2>
+                        <p>Thank you for your purchase. Your order has been received and is being processed.</p>
+                        <p class="order-number">Order #: <span>ENP123456</span></p>
+                        <p>We've sent a confirmation email to <span class="customer-email">user@example.com</span></p>
+                        <a href="index.html" class="continue-shopping">Continue Shopping</a>
+                    </div>
+
+                    <div class="order-details">
+                        <h3>Order Details</h3>
+                        <div class="details-grid">
+                            <!-- Order details will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-summary-sidebar">
+                <h3>Your Order</h3>
+                <div class="sidebar-items">
+                    <!-- Sidebar items will be loaded by JavaScript -->
+                </div>
+                <div class="sidebar-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping</span>
+                        <span class="shipping">$0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Tax</span>
+                        <span class="tax">$0.00</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Total</span>
+                        <span class="total">$0.00</span>
+                    </div>
+                </div>
+                <div class="promo-code">
+                    <label for="promo">Promo Code</label>
+                    <div class="promo-input">
+                        <input type="text" id="promo" placeholder="Enter code">
+                        <button>Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+
+    <script src="js/cart.js"></script>
+    <script>
+        // Checkout functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load cart items
+            if (window.shoppingCart) {
+                updateOrderSummary();
+            }
+
+            // Handle step navigation
+            document.querySelectorAll('.next-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const nextStep = this.getAttribute('data-next');
+                    showStep(nextStep);
+                });
+            });
+
+            document.querySelectorAll('.back-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const backStep = this.getAttribute('data-back') || 'cart';
+                    if (backStep === 'cart') {
+                        window.location.href = 'index.html';
+                    } else {
+                        showStep(backStep);
+                    }
+                });
+            });
+
+            // Handle place order button
+            const placeOrderBtn = document.getElementById('placeOrderBtn');
+            if (placeOrderBtn) {
+                placeOrderBtn.addEventListener('click', function () {
+                    showStep('confirmation');
+                });
+            }
+
+            // Handle payment method selection
+            document.querySelectorAll('.payment-method input').forEach(radio => {
+                radio.addEventListener('change', function () {
+                    document.querySelectorAll('.payment-method').forEach(method => {
+                        method.classList.remove('active');
+                    });
+                    this.closest('.payment-method').classList.add('active');
+                });
+            });
+        });
+
+        function showStep(step) {
+            // Hide all forms
+            document.querySelectorAll('.active-form').forEach(form => {
+                form.classList.remove('active-form');
+            });
+            document.getElementById('reviewOrder').style.display = 'none';
+            document.getElementById('orderConfirmation').style.display = 'none';
+
+            // Update progress steps
+            document.querySelectorAll('.step').forEach(stepEl => {
+                stepEl.classList.remove('active');
+            });
+
+            // Show the selected step
+            if (step === 'shipping') {
+                document.getElementById('shippingForm').classList.add('active-form');
+                document.querySelector('.step[data-step="1"]').classList.add('active');
+            } else if (step === 'payment') {
+                document.getElementById('paymentForm').classList.add('active-form');
+                document.querySelector('.step[data-step="2"]').classList.add('active');
+            } else if (step === 'review') {
+                document.getElementById('reviewOrder').style.display = 'block';
+                document.querySelector('.step[data-step="3"]').classList.add('active');
+                updateReviewOrder();
+            } else if (step === 'confirmation') {
+                document.getElementById('orderConfirmation').style.display = 'block';
+                updateConfirmationDetails();
+            }
+        }
+
+        function updateOrderSummary() {
+            const cart = window.shoppingCart.cart;
+            const subtotal = window.shoppingCart.cartTotal;
+            const shipping = 9.99; // Example shipping cost
+            const tax = subtotal * 0.08; // Example tax
+
+            // Update sidebar
+            const sidebarItems = document.querySelector('.sidebar-items');
+            sidebarItems.innerHTML = '';
+
+            cart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'sidebar-item';
+                itemEl.innerHTML = `
+                    <div class="item-image">
+                        <img src="${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="item-info">
+                        <h4>${item.title}</h4>
+                        <p>Size: ${item.size}</p>
+                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
+                    </div>
+                `;
+                sidebarItems.appendChild(itemEl);
+            });
+
+            // Update totals
+            document.querySelectorAll('.subtotal').forEach(el => {
+                el.textContent = `$${subtotal.toFixed(2)}`;
+            });
+
+            document.querySelectorAll('.shipping').forEach(el => {
+                el.textContent = `$${shipping.toFixed(2)}`;
+            });
+
+            document.querySelectorAll('.tax').forEach(el => {
+                el.textContent = `$${tax.toFixed(2)}`;
+            });
+
+            document.querySelectorAll('.total').forEach(el => {
+                el.textContent = `$${(subtotal + shipping + tax).toFixed(2)}`;
+            });
+        }
+
+        function updateReviewOrder() {
+            const cart = window.shoppingCart.cart;
+            const shippingForm = document.getElementById('shippingForm');
+            const paymentForm = document.getElementById('paymentForm');
+
+            // Update order items
+            const orderItems = document.querySelector('.order-items');
+            orderItems.innerHTML = '<h3>Your Items</h3>';
+
+            cart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'review-item';
+                itemEl.innerHTML = `
+                    <div class="item-image">
+                        <img src="${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="item-info">
+                        <h4>${item.title}</h4>
+                        <p>Size: ${item.size}</p>
+                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
+                    </div>
+                    <div class="item-total">
+                        $${(item.price * item.quantity).toFixed(2)}
+                    </div>
+                `;
+                orderItems.appendChild(itemEl);
+            });
+
+            // Update shipping info
+            const shippingInfo = `
+                <p>${shippingForm.querySelector('#firstName').value} ${shippingForm.querySelector('#lastName').value}</p>
+                <p>${shippingForm.querySelector('#address').value}</p>
+                <p>${shippingForm.querySelector('#city').value}, ${shippingForm.querySelector('#state').value} ${shippingForm.querySelector('#zip').value}</p>
+                <p>${shippingForm.querySelector('#country').value}</p>
+                <p>${shippingForm.querySelector('#phone').value}</p>
+            `;
+            document.querySelector('.shipping-info .info-display').innerHTML = shippingInfo;
+
+            // Update payment info
+            const paymentMethod = paymentForm.querySelector('input[name="paymentMethod"]:checked').value;
+            let paymentInfo = '';
+
+            if (paymentMethod === 'creditCard') {
+                paymentInfo = `
+                    <p>Credit Card ending in ${paymentForm.querySelector('#cardNumber').value.slice(-4)}</p>
+                    <p>Expires ${paymentForm.querySelector('#expDate').value}</p>
+                `;
+            } else {
+                paymentInfo = `<p>${paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1)}</p>`;
+            }
+
+            document.querySelector('.payment-info .info-display').innerHTML = paymentInfo;
+        }
+
+        function updateConfirmationDetails() {
+            const cart = window.shoppingCart.cart;
+            const shippingForm = document.getElementById('shippingForm');
+
+            // Update order details
+            const detailsGrid = document.querySelector('.details-grid');
+            detailsGrid.innerHTML = '';
+
+            cart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'detail-item';
+                itemEl.innerHTML = `
+                    <div class="item-image">
+                        <img src="${item.image}" alt="${item.title}">
+                    </div>
+                    <div class="item-info">
+                        <h4>${item.title}</h4>
+                        <p>Size: ${item.size}</p>
+                        <p>Quantity: ${item.quantity}</p>
+                    </div>
+                    <div class="item-price">
+                        $${(item.price * item.quantity).toFixed(2)}
+                    </div>
+                `;
+                detailsGrid.appendChild(itemEl);
+            });
+
+            // Update customer email
+            document.querySelector('.customer-email').textContent = 'user@example.com'; // In real app, this would come from user account
+
+            // Clear cart
+            window.shoppingCart.cart = [];
+            window.shoppingCart.cartCount = 0;
+            window.shoppingCart.cartTotal = 0;
+            window.shoppingCart.updateCartCount();
+            window.shoppingCart.saveCart();
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Footer Columns -->
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-column about-column">
+                    <div class="footer-logo">
+                        <img src="images/logo-white.png" alt="En Pixels Logo">
+                    </div>
+                    <p class="footer-about">En Pixels is a premier destination for high-quality digital art, connecting
+                        art
+                        lovers with talented creators worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service Column -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="shipping.html">Shipping Policy</a></li>
+                        <li><a href="returns.html">Returns & Refunds</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Art Street, Creative City, CA 90210</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>(123) 456-7890</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@enpixels.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9am-6pm PST</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="footer-column newsletter-column">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p class="newsletter-text">Subscribe to get updates on new collections and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="payment-methods">
+                        <img src="images/payments/visa.png" alt="Visa">
+                        <img src="images/payments/mastercard.png" alt="Mastercard">
+                        <img src="images/payments/amex.png" alt="American Express">
+                        <img src="images/payments/paypal.png" alt="PayPal">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="current-year"></span> En Pixels. All rights reserved.
+                </div>
+                <div class="footer-extra-links">
+                    <a href="sitemap.html">Sitemap</a>
+                    <a href="affiliates.html">Affiliates</a>
+                    <a href="careers.html">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

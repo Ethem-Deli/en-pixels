@@ -1,0 +1,56 @@
+en-pixels/
+├── index.html
+├── product.html
+├── about.html
+├── contact.html
+├── checkout.html
+├── css/
+│   ├── style.css
+├── js/
+│   ├── script.js
+│   ├── cart.js
+│   ├── product.js
+├── images/
+│   ├── logo.png
+│   ├── products/
+│   │   ├── cosmic-harmony.jpg
+│   │   ├── mountain-serenity.jpg
+│   │   ├── urban-vibes.jpg
+│   │   ├── ocean-dreams.jpg
+│   ├── categories/
+│   │   ├── abstract.jpg
+│   │   ├── landscapes.jpg
+│   │   ├── portraits.jpg
+│   │   ├── minimalist.jpg
+
+
+commands
+
+cd D:\en-pixels
+
+# Create folders
+mkdir css, js, images\products, images\categories
+
+# Create HTML files
+ni index.html -ItemType File
+ni product.html -ItemType File
+ni about.html -ItemType File
+ni contact.html -ItemType File
+ni checkout.html -ItemType File
+
+# Create CSS and JS files
+ni css\style.css -ItemType File
+ni js\script.js -ItemType File
+ni js\cart.js -ItemType File
+ni js\product.js -ItemType File
+
+# Create image placeholders (empty files for now)
+ni images\logo.png -ItemType File
+ni images\products\cosmic-harmony.jpg -ItemType File
+ni images\products\mountain-serenity.jpg -ItemType File
+ni images\products\urban-vibes.jpg -ItemType File
+ni images\products\ocean-dreams.jpg -ItemType File
+ni images\categories\abstract.jpg -ItemType File
+ni images\categories\landscapes.jpg -ItemType File
+ni images\categories\portraits.jpg -ItemType File
+ni images\categories\minimalist.jpg -ItemType File
