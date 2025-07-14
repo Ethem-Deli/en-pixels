@@ -348,3 +348,22 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScroll = currentScroll;
     });
 });
+
+// Simulate login state
+let user = JSON.parse(localStorage.getItem("enpixels_user")) || null;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const accountMenu = document.querySelector(".account-menu");
+
+    if (user) {
+        accountMenu.innerHTML = `
+            <a href="account.html">My Account</a>
+            <a href="#" id="logout-link">Logout</a>
+        `;
+
+        document.getElementById("logout-link").addEventListener("click", () => {
+            localStorage.removeItem("enpixels_user");
+            window.location.href = "index.html";
+        });
+    }
+});

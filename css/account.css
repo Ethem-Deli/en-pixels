@@ -1,0 +1,92 @@
+/* Account System */
+.account-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    gap: 2rem;
+}
+
+.account-nav {
+    width: 250px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.account-nav h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.account-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.account-nav li a {
+    display: block;
+    padding: 0.75rem 0;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.account-nav li a:hover,
+.account-nav li a.active {
+    color: #0066cc;
+    font-weight: 600;
+}
+
+.account-content {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.account-section {
+    display: none;
+}
+
+.account-section.active {
+    display: block;
+}
+
+.account-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.summary-card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #0066cc;
+}
+
+.summary-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.order-list {
+    margin-top: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .account-container {
+        flex-direction: column;
+    }
+
+    .account-nav {
+        width: 100%;
+    }
+}
