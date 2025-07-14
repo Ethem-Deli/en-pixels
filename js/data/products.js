@@ -26,12 +26,8 @@ const products = [
         description: "Breathtaking digital landscape capturing majestic mountain ranges at dawn.",
         category: "landscape",
         images: [
-            "images/products/landscape1.jpg",
-            "images/products/landscape2.jpg"
-        ],
-        sizes: [
-            { name: "Small (12\" x 12\")", priceAdjustment: -10 },
-            { name: "Medium (18\" x 18\")", priceAdjustment: 0 }
+            "images/products/2.jpg",
+            "images/products/1.jpg"
         ],
         rating: 4,
         reviewCount: 18,
@@ -47,13 +43,10 @@ const products = [
         description: "Contemporary portrait with urban influences and vibrant colors.",
         category: "portrait",
         images: [
-            "images/products/portrait1.jpg",
-            "images/products/portrait2.jpg"
+            "images/products/1.jpg",
+            "images/products/2.jpg"
         ],
-        sizes: [
-            { name: "Medium (18\" x 18\")", priceAdjustment: 0 },
-            { name: "Large (24\" x 24\")", priceAdjustment: 15 }
-        ],
+        
         rating: 5,
         reviewCount: 32,
         featured: true,
@@ -67,20 +60,131 @@ const products = [
         description: "Minimalist ocean waves in calming blue tones.",
         category: "minimalist",
         images: [
-            "images/products/minimalist1.jpg",
-            "images/products/minimalist2.jpg"
+            "images/products/1.jpg",
+            "images/products/2.jpg"
         ],
-        sizes: [
-            { name: "Small (12\" x 12\")", priceAdjustment: -10 },
-            { name: "Medium (18\" x 18\")", priceAdjustment: 0 }
-        ],
+        
         rating: 4.5,
         reviewCount: 21,
         badge: "Sale",
         badgeClass: "badge-sale",
         featured: true,
         inStock: true
-    }
+    },
+    {
+        id: 5,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
+    {
+        id: 6,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
+    {
+        id: 7,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
+    {
+        id: 8,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
+    {
+        id: 9,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
+    {
+        id: 10,
+        title: "Ocean Dreams",
+        price: 45.99,
+        originalPrice: 55.99,
+        description: "Minimalist ocean waves in calming blue tones.",
+        category: "minimalist",
+        images: [
+            "images/products/1.jpg",
+            "images/products/2.jpg"
+        ],
+
+        rating: 4.5,
+        reviewCount: 21,
+        badge: "Sale",
+        badgeClass: "badge-sale",
+        featured: true,
+        inStock: true
+    },
 ];
 
 // You could also add functions for fetching from an API:

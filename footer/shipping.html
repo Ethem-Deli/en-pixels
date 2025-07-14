@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Information - EnPixels</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <header class="main-header">
+            <div class="header-container">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="/index.html" class="logo-link">
+                        <img src="/images/1.png" alt="En Pixels Logo" class="logo-img">
+                        <span class="logo-text">EN PIXELS</span>
+                    </a>
+                </div>
+
+                <!-- Main Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="/shop.html?category=abstract" class="dropdown-item">Abstract Art</a>
+                                <a href="/shop.html?category=landscape" class="dropdown-item">Landscapes</a>
+                                <a href="/shop.html?category=portrait" class="dropdown-item">Portraits</a>
+                                <a href="/shop.html?category=minimalist" class="dropdown-item">Minimalist</a>
+                                <a href="/shop.html" class="dropdown-item all-items">View All</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="/log.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Header Icons -->
+                <div class="header-actions">
+                    <button class="search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="/account.html" class="account-btn" aria-label="My Account">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="cart-btn-container">
+                        <button class="cart-btn" aria-label="Shopping Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn" aria-label="Mobile Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <!-- In your index.html, update the product template part (around line 62) -->
+                <script type="text/template" id="product-template">
+                        <div class="product-card ${product.featured ? 'featured' : ''} ${product.badgeClass ? product.badgeClass : ''}">
+                            ${product.badge ? `<span class="badge ${product.badgeClass}" data-badge="${product.badge}">${product.badge}</span>` : ''}
+                            <img src="${product.images[0]}" alt="${product.title}" class="product-image" loading="lazy">
+                            <div class="product-info">
+                                <h3>${product.title}</h3>
+                                <div class="price">
+                                    ${product.originalPrice ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                                    <span class="current-price">$${product.price.toFixed(2)}</span>
+                                </div>
+                                <div class="rating">
+                                    ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
+                                    <span class="review-count">(${product.reviewCount})</span>
+                                </div>
+                                <p class="description">${product.description}</p>
+                                <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                            </div>
+                        </div>
+                    </script>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <form class="search-form">
+                        <input type="text" placeholder="Search digital art..." class="search-input">
+                        <button type="submit" class="search-submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button type="button" class="search-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </header>
+
+        <main class="page-container">
+            <h1>Shipping Information</h1>
+
+            <div class="info-section">
+                <h2>Digital Delivery</h2>
+                <p>All our products are digital and delivered electronically. There are no physical shipments.</p>
+
+                <h2>Delivery Time</h2>
+                <p>You will receive your download links immediately after payment confirmation. Typically within:</p>
+                <ul>
+                    <li>Instant delivery for automatic payments (credit card, PayPal)</li>
+                    <li>1-2 business hours for manual payment verification (bank transfers)</li>
+                </ul>
+
+                <h2>Accessing Your Files</h2>
+                <p>After purchase, you can access your files through:</p>
+                <ol>
+                    <li>The download link in your confirmation email</li>
+                    <li>Your account dashboard if you created one</li>
+                    <li>By contacting support with your order number</li>
+                </ol>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <!-- Footer Columns -->
+                <div class="footer-grid">
+                    <!-- About Column -->
+                    <div class="footer-column about-column">
+                        <div class="footer-logo">
+                            <img src="/images/logo.jpg" alt="En Pixels Logo">
+                        </div>
+                        <p class="footer-about">En Pixels is a premier destination for high-quality digital art,
+                            connecting
+                            art
+                            lovers with talented creators worldwide.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/shop.html">Shop</a></li>
+                            <li><a href="/about.html">About Us</a></li>
+                            <li><a href="/blog.html">Blog</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Customer Service Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Customer Service</h3>
+                        <ul class="footer-links">
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="shipping.html">Shipping Policy</a></li>
+                            <li><a href="returns.html">Returns & Refunds</a></li>
+                            <li><a href="terms.html">Terms of Service</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Column -->
+                    <div class="footer-column">
+                        <h3 class="footer-title">Contact Us</h3>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Street, Doha City, QA 90210</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+97450606655</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <span>info@enpixels.com</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <span>Sat-Thu: 8am-6pm MTD</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter Column -->
+                    <div class="footer-column newsletter-column">
+                        <h3 class="footer-title">Newsletter</h3>
+                        <p class="newsletter-text">Subscribe to get updates on new collections and exclusive offers.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                        <div class="payment-methods">
+                            <img src="/images/payments/visa.png" alt="Visa">
+                            <img src="/images/payments/mastercard.png" alt="Mastercard">
+                            <img src="/images/payments/amex.png" alt="American Express">
+                            <img src="/images/payments/paypal.png" alt="PayPal">
+                            <img src="/images/payments/gcash.png" alt="Gcash">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        &copy; <span id="current-year"></span> En Pixels. All rights reserved.
+                    </div>
+                    <div class="footer-extra-links">
+                        <a href="/sitemap.html">Sitemap</a>
+                        <a href="/affiliates.html">Affiliates</a>
+                        <a href="/careers.html">Careers</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script type="module" src="js/script.js"></script>
+        <script type="module" src="js/cart.js"></script>
+</body>
+
+</html>

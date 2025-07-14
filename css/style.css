@@ -1732,13 +1732,13 @@
     color: #ffc107;
 }
 
-.price .current {
+.quick-view-modal .price .current {
     font-size: 24px;
     font-weight: bold;
     color: #6c63ff;
 }
 
-.price .original {
+.quick-view-modal .price .original {
     font-size: 18px;
     color: #999;
     text-decoration: line-through;
@@ -1972,5 +1972,163 @@
     .badge {
         font-size: 10px;
         padding: 3px 8px;
+    }
+}
+
+/* Product Section */
+section.featured-artworks {
+    padding: 40px;
+}
+
+.featured-artworks h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive product grid layout */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+}
+
+.product-card .category {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.product-card .price {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-card .rating {
+    color: #f39c12;
+}
+
+/* ===== Policy Pages Styling ===== */
+.page-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.info-section,
+.policy-section,
+.terms-section,
+.privacy-section,
+.faq-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+/* FAQ Specific Styles */
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: #f9f9f9;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:after {
+    content: '+';
+    font-size: 1.2rem;
+}
+
+.faq-question.active:after {
+    content: '-';
+}
+
+.faq-question:hover {
+    background: #f0f0f0;
+}
+
+.faq-answer {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-question.active+.faq-answer {
+    padding: 1rem;
+    max-height: 500px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .page-container {
+        padding: 0 1rem;
+    }
+
+    .info-section,
+    .policy-section,
+    .terms-section,
+    .privacy-section,
+    .faq-section {
+        padding: 1.5rem;
     }
 }
