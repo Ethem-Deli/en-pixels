@@ -294,3 +294,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+async function addToCart(productId) {
+    const res = await fetch('/api/session');
+    const data = await res.json();
+    if (!data.loggedIn) {
+        alert('Please login first!');
+        window.location.href = '/login.html';
+        return;
+    }
+    // Add your add-to-cart logic here (e.g., localStorage or backend cart)
+    alert(`Product ${productId} added to cart!`);
+}
