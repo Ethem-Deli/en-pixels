@@ -255,15 +255,22 @@
             </div>
         </footer>
         <script>
-            document.querySelector(".login-form").addEventListener("submit", (e) => {
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
                 e.preventDefault();
-                const email = document.querySelector("#email").value;
-                const password = document.querySelector("#password").value;
-                if (email && password) {
-                    localStorage.setItem("enpixels_user", JSON.stringify({ email }));
-                    window.location.href = "index.html";
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const userData = JSON.parse(localStorage.getItem(username));
+
+                if (!userData) {
+                    document.getElementById('message').textContent = 'User not found!';
+                } else if (userData.password !== password) {
+                    document.getElementById('message').textContent = 'Incorrect password!';
                 } else {
-                    alert("Please enter credentials");
+                    localStorage.setItem('currentUser', username);
+                    document.getElementById('message').textContent = 'Login successful!';
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
                 }
             });
         </script>

@@ -255,6 +255,7 @@
                     </div>
                 </div>
             </div>
+            <button class="add-to-cart" data-id="123" data-name="Cosmic Harmony" data-price="15.99">Add to Cart</button>
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
@@ -269,6 +270,39 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Handle Add to Cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                const currentUser = localStorage.getItem('currentUser');
+                if (!currentUser) {
+                    alert('Please login to add items to cart.');
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                const product = {
+                    id: this.dataset.id,
+                    name: this.dataset.name,
+                    price: parseFloat(this.dataset.price),
+                    quantity: 1
+                };
+
+                let cartKey = `cart_${currentUser}`;
+                let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+                const existingItem = cart.find(item => item.id === product.id);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push(product);
+                }
+
+                localStorage.setItem(cartKey, JSON.stringify(cart));
+                alert('Item added to cart!');
+            });
+        });
+    </script>
 
     <script src="js/product.js"></script>
     <script src="js/cart.js"></script>

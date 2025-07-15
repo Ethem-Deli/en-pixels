@@ -20,7 +20,7 @@
                     <span class="logo-text">EN PIXELS</span>
                 </a>
             </div>
-    
+
             <!-- Main Navigation -->
             <nav class="main-nav">
                 <ul class="nav-list">
@@ -40,7 +40,7 @@
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-    
+
             <!-- Header Icons -->
             <div class="header-actions">
                 <button class="search-btn" aria-label="Search">
@@ -60,43 +60,43 @@
                 </button>
             </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <div class="logo-container">
-                <a href="index.html" class="logo-link">
-                    <img src="images/logo-white.png" alt="En Pixels Logo" class="logo-img">
-                </a>
-            </div>
-            <button class="mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul class="mobile-nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li class="mobile-dropdown">
-                    <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
-                    <ul class="mobile-dropdown-menu">
-                        <li><a href="shop.html?category=abstract">Abstract Art</a></li>
-                        <li><a href="shop.html?category=landscape">Landscapes</a></li>
-                        <li><a href="shop.html?category=portrait">Portraits</a></li>
-                        <li><a href="shop.html?category=minimalist">Minimalist</a></li>
-                        <li><a href="shop.html">View All</a></li>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <div class="logo-container">
+                        <a href="index.html" class="logo-link">
+                            <img src="images/logo-white.png" alt="En Pixels Logo" class="logo-img">
+                        </a>
+                    </div>
+                    <button class="mobile-menu-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav">
+                    <ul class="mobile-nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="mobile-dropdown">
+                            <a href="shop.html">Shop <i class="fas fa-chevron-down"></i></a>
+                            <ul class="mobile-dropdown-menu">
+                                <li><a href="shop.html?category=abstract">Abstract Art</a></li>
+                                <li><a href="shop.html?category=landscape">Landscapes</a></li>
+                                <li><a href="shop.html?category=portrait">Portraits</a></li>
+                                <li><a href="shop.html?category=minimalist">Minimalist</a></li>
+                                <li><a href="shop.html">View All</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="mobile-actions">
-            <a href="account.html" class="mobile-account-btn">
-                <i class="fas fa-user"></i> My Account
-            </a>
-        </div>
-    </div>
-</header>
+                </nav>
+                <div class="mobile-actions">
+                    <a href="account.html" class="mobile-account-btn">
+                        <i class="fas fa-user"></i> My Account
+                    </a>
+                </div>
+            </div>
+    </header>
     <main class="checkout-page">
         <div class="checkout-container">
             <div class="checkout-form">
@@ -332,222 +332,6 @@
         </div>
     </main>
 
-    <!-- Footer (same as index.html) -->
-
-    <script src="js/cart.js"></script>
-    <script>
-        // Checkout functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load cart items
-            if (window.shoppingCart) {
-                updateOrderSummary();
-            }
-
-            // Handle step navigation
-            document.querySelectorAll('.next-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const nextStep = this.getAttribute('data-next');
-                    showStep(nextStep);
-                });
-            });
-
-            document.querySelectorAll('.back-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const backStep = this.getAttribute('data-back') || 'cart';
-                    if (backStep === 'cart') {
-                        window.location.href = 'index.html';
-                    } else {
-                        showStep(backStep);
-                    }
-                });
-            });
-
-            // Handle place order button
-            const placeOrderBtn = document.getElementById('placeOrderBtn');
-            if (placeOrderBtn) {
-                placeOrderBtn.addEventListener('click', function () {
-                    showStep('confirmation');
-                });
-            }
-
-            // Handle payment method selection
-            document.querySelectorAll('.payment-method input').forEach(radio => {
-                radio.addEventListener('change', function () {
-                    document.querySelectorAll('.payment-method').forEach(method => {
-                        method.classList.remove('active');
-                    });
-                    this.closest('.payment-method').classList.add('active');
-                });
-            });
-        });
-
-        function showStep(step) {
-            // Hide all forms
-            document.querySelectorAll('.active-form').forEach(form => {
-                form.classList.remove('active-form');
-            });
-            document.getElementById('reviewOrder').style.display = 'none';
-            document.getElementById('orderConfirmation').style.display = 'none';
-
-            // Update progress steps
-            document.querySelectorAll('.step').forEach(stepEl => {
-                stepEl.classList.remove('active');
-            });
-
-            // Show the selected step
-            if (step === 'shipping') {
-                document.getElementById('shippingForm').classList.add('active-form');
-                document.querySelector('.step[data-step="1"]').classList.add('active');
-            } else if (step === 'payment') {
-                document.getElementById('paymentForm').classList.add('active-form');
-                document.querySelector('.step[data-step="2"]').classList.add('active');
-            } else if (step === 'review') {
-                document.getElementById('reviewOrder').style.display = 'block';
-                document.querySelector('.step[data-step="3"]').classList.add('active');
-                updateReviewOrder();
-            } else if (step === 'confirmation') {
-                document.getElementById('orderConfirmation').style.display = 'block';
-                updateConfirmationDetails();
-            }
-        }
-
-        function updateOrderSummary() {
-            const cart = window.shoppingCart.cart;
-            const subtotal = window.shoppingCart.cartTotal;
-            const shipping = 9.99; // Example shipping cost
-            const tax = subtotal * 0.08; // Example tax
-
-            // Update sidebar
-            const sidebarItems = document.querySelector('.sidebar-items');
-            sidebarItems.innerHTML = '';
-
-            cart.forEach(item => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'sidebar-item';
-                itemEl.innerHTML = `
-                    <div class="item-image">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="item-info">
-                        <h4>${item.title}</h4>
-                        <p>Size: ${item.size}</p>
-                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
-                    </div>
-                `;
-                sidebarItems.appendChild(itemEl);
-            });
-
-            // Update totals
-            document.querySelectorAll('.subtotal').forEach(el => {
-                el.textContent = `$${subtotal.toFixed(2)}`;
-            });
-
-            document.querySelectorAll('.shipping').forEach(el => {
-                el.textContent = `$${shipping.toFixed(2)}`;
-            });
-
-            document.querySelectorAll('.tax').forEach(el => {
-                el.textContent = `$${tax.toFixed(2)}`;
-            });
-
-            document.querySelectorAll('.total').forEach(el => {
-                el.textContent = `$${(subtotal + shipping + tax).toFixed(2)}`;
-            });
-        }
-
-        function updateReviewOrder() {
-            const cart = window.shoppingCart.cart;
-            const shippingForm = document.getElementById('shippingForm');
-            const paymentForm = document.getElementById('paymentForm');
-
-            // Update order items
-            const orderItems = document.querySelector('.order-items');
-            orderItems.innerHTML = '<h3>Your Items</h3>';
-
-            cart.forEach(item => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'review-item';
-                itemEl.innerHTML = `
-                    <div class="item-image">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="item-info">
-                        <h4>${item.title}</h4>
-                        <p>Size: ${item.size}</p>
-                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
-                    </div>
-                    <div class="item-total">
-                        $${(item.price * item.quantity).toFixed(2)}
-                    </div>
-                `;
-                orderItems.appendChild(itemEl);
-            });
-
-            // Update shipping info
-            const shippingInfo = `
-                <p>${shippingForm.querySelector('#firstName').value} ${shippingForm.querySelector('#lastName').value}</p>
-                <p>${shippingForm.querySelector('#address').value}</p>
-                <p>${shippingForm.querySelector('#city').value}, ${shippingForm.querySelector('#state').value} ${shippingForm.querySelector('#zip').value}</p>
-                <p>${shippingForm.querySelector('#country').value}</p>
-                <p>${shippingForm.querySelector('#phone').value}</p>
-            `;
-            document.querySelector('.shipping-info .info-display').innerHTML = shippingInfo;
-
-            // Update payment info
-            const paymentMethod = paymentForm.querySelector('input[name="paymentMethod"]:checked').value;
-            let paymentInfo = '';
-
-            if (paymentMethod === 'creditCard') {
-                paymentInfo = `
-                    <p>Credit Card ending in ${paymentForm.querySelector('#cardNumber').value.slice(-4)}</p>
-                    <p>Expires ${paymentForm.querySelector('#expDate').value}</p>
-                `;
-            } else {
-                paymentInfo = `<p>${paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1)}</p>`;
-            }
-
-            document.querySelector('.payment-info .info-display').innerHTML = paymentInfo;
-        }
-
-        function updateConfirmationDetails() {
-            const cart = window.shoppingCart.cart;
-            const shippingForm = document.getElementById('shippingForm');
-
-            // Update order details
-            const detailsGrid = document.querySelector('.details-grid');
-            detailsGrid.innerHTML = '';
-
-            cart.forEach(item => {
-                const itemEl = document.createElement('div');
-                itemEl.className = 'detail-item';
-                itemEl.innerHTML = `
-                    <div class="item-image">
-                        <img src="${item.image}" alt="${item.title}">
-                    </div>
-                    <div class="item-info">
-                        <h4>${item.title}</h4>
-                        <p>Size: ${item.size}</p>
-                        <p>Quantity: ${item.quantity}</p>
-                    </div>
-                    <div class="item-price">
-                        $${(item.price * item.quantity).toFixed(2)}
-                    </div>
-                `;
-                detailsGrid.appendChild(itemEl);
-            });
-
-            // Update customer email
-            document.querySelector('.customer-email').textContent = 'user@example.com'; // In real app, this would come from user account
-
-            // Clear cart
-            window.shoppingCart.cart = [];
-            window.shoppingCart.cartCount = 0;
-            window.shoppingCart.cartTotal = 0;
-            window.shoppingCart.updateCartCount();
-            window.shoppingCart.saveCart();
-        }
-    </script>
-
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
@@ -646,6 +430,9 @@
             </div>
         </div>
     </footer>
+
+        <script src="js/cart.js"></script>
+        <script src="js/checkout.js"></script>
 </body>
 
 </html>

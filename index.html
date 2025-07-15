@@ -67,7 +67,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            <!-- In your index.html, update the product template part (around line 62) -->
+            
             <script type="text/template" id="product-template">
                 <div class="product-card ${product.featured ? 'featured' : ''} ${product.badgeClass ? product.badgeClass : ''}">
                     ${product.badge ? `<span class="badge ${product.badgeClass}" data-badge="${product.badge}">${product.badge}</span>` : ''}
@@ -260,6 +260,24 @@
             </div>
         </div>
     </footer>
+    <div id="userBox" style="position: absolute; top: 10px; right: 10px;"></div>
+
+    <script>
+        const currentUser = localStorage.getItem('currentUser');
+        const userBox = document.getElementById('userBox');
+
+        if (currentUser) {
+            userBox.innerHTML = `
+          <strong>Welcome, ${currentUser}</strong>
+          <button onclick="logout()">Logout</button>
+        `;
+        }
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            window.location.reload();
+        }
+    </script>
 
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/cart.js"></script>
